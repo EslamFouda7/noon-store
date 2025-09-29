@@ -20,7 +20,7 @@ function Card({ products }) {
                     <span className="ms-2 fs-6 text-decoration-line-through text-secondary">
                       {product.price}
                     </span>
-                    <span className="text-success fs-6">{product.discountPercentage}%</span>
+                    <span className="text-success fs-6"> {product.discountPercentage}%</span>
                   </p>
                 </div>
               </div>
