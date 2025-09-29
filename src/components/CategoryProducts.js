@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import Carousel from "./Carousel";
 import { CategoriesData } from "../data/categoriesImg";
 
-
 function CategoryProducts() {
   const { category } = useParams();
   const { items } = useSelector((state) => state.products);
