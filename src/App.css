@@ -1,0 +1,14 @@
+html, body, #root {
+  height: 100%;         /* خلي الطول كله 100% */
+  margin: 0;
+}
+
+.App {
+  min-height: 100vh;     /* طول الشاشة */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;              /* ياخد المساحة الفاضية */
+}

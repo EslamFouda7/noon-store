@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 import logo from "../noon-logo-en.svg";
 import { useState } from "react";
@@ -7,18 +7,20 @@ import { fetchProducts, productsSearch } from "../rtk/slices/products-slice";
 
 function Navbar() {
   const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
-    const query = e.target.search.value.trim();
-    e.preventDefault();
-    if (query === "") {
-      dispatch(fetchProducts());
-    } else {
-      dispatch(productsSearch(query));
-    }
-  };
+  e.preventDefault();
+  const searchQuery = e.target.search.value.trim();
+  if (searchQuery !== "") {
+    navigate(`/search/${searchQuery}`);
+   
+  }
+  else{
+    navigate("/")
+  }
+};
   return (
     <>
       <nav class="navbar navbar-expand-lg bg-custom-yellow">
