@@ -4,8 +4,6 @@ import { CategoriesData } from "../data/categoriesImg";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-
-
 import { FreeMode, Keyboard, Pagination } from "swiper/modules";
 import { useDispatch } from "react-redux";
 import { fetchProductsByCategory } from "../rtk/slices/products-slice";
