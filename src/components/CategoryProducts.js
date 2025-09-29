@@ -5,11 +5,11 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Carousel from "./Carousel";
 import { CategoriesData } from "../data/categoriesImg";
-import Loading from "./Loading";
+
 
 function CategoryProducts() {
   const { category } = useParams();
-  const { items, loading } = useSelector((state) => state.products);
+  const { items } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   useEffect(() => {
     if (category) {
