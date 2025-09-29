@@ -41,7 +41,6 @@ export const productById = createAsyncThunk(
   }
 );
 
-
 const ProductsSlice = createSlice({
   initialState: {
     items: [],
@@ -54,7 +53,7 @@ const ProductsSlice = createSlice({
     clearSearch: (state) => {
       state.isSearching = false;
       state.items = []; // أو رجعها للـ default لو عاوز
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -84,11 +83,12 @@ const ProductsSlice = createSlice({
       })
       .addCase(productById.pending, (state) => {
         state.loading = true;
+        state.product = null;
       })
       .addCase(productById.fulfilled, (state, action) => {
         state.loading = false;
         state.product = action.payload;
-      })
+      });
   },
 });
 export const { clearSearch } = ProductsSlice.actions;
