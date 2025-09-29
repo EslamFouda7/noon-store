@@ -12,7 +12,6 @@ function Carousel({ images = [], id = "carouselDefault" }) {
   return (
     <div className="mb-5"> 
       <Swiper
-        // Modules التي سيتم استخدامها (للتشغيل التلقائي، التحكم، المؤشرات)
         modules={[Pagination, Autoplay]} 
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         pagination={{ clickable: true }} 
