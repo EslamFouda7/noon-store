@@ -5,7 +5,7 @@ function NotFound(){
     <div className="container text-center mt-5">
       <h1 className="display-4 text-danger">404</h1>
       <p className="lead">This Page Not Found !</p>
-      <Link to="/" className="btn btn-primary">back to home</Link>
+      <Link to="/" className="btn btn-primary">Back To Home</Link>
     </div>
     </>
   )
