@@ -10,10 +10,10 @@ import 'swiper/css/autoplay';
 
 function Carousel({ images = [], id = "carouselDefault" }) {
   return (
-    <div className="mb-5"> 
+    <div className=""> 
       <Swiper
         modules={[Pagination, Autoplay]} 
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         pagination={{ clickable: true }} 
         slidesPerView={1} 
         loop={true} 

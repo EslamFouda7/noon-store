@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { productById } from "../rtk/slices/products-slice";
-import { addToCart } from "../rtk/slices/cart-slice";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FaAward, FaRegClock } from "react-icons/fa";
 import { FaClockRotateLeft } from "react-icons/fa6";
-import { Slide, toast, ToastContainer } from "react-toastify";
+import BtnAddToCart from "./BtnAddToCart";
 
 function ProductDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { product } = useSelector((state) => state.products);
-  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     if (id) {
@@ -21,22 +19,6 @@ function ProductDetails() {
     }
   }, [id, dispatch]);
 
-  useEffect(() => {
-    if (product) {
-      setQuantity(product.minimumOrderQuantity || 1);
-    }
-  }, [product]);
-
-  const handelBtn = () => {
-    dispatch(addToCart({ ...product, quantity }));
-    toast.success("Added to cart !", {
-      position: "top-center",
-      autoClose: 4000,
-      theme: "dark",
-      transition: Slide,
-      style: { maxWidth: "90%" },
-    });
-  };
   if (!product) return <h2>No product found</h2>;
   return (
     <>
@@ -106,14 +88,11 @@ function ProductDetails() {
             </div>
             <hr />
             <div className="row px-3">
-              <button className="btn btn-primary" onClick={handelBtn}>
-                ADD TO CART
-              </button>
+              <BtnAddToCart />
             </div>
           </div>
         </div>
       </div>
-      <ToastContainer />
     </>
   );
 }
