@@ -34,7 +34,7 @@ function ProductDetails() {
       autoClose: 4000,
       theme: "dark",
       transition: Slide,
-      style: {  maxWidth: "90%" }
+      style: { maxWidth: "90%" },
     });
   };
   if (!product) return <h2>No product found</h2>;
@@ -74,7 +74,7 @@ function ProductDetails() {
             </p>
             <Swiper
               className="mySwiper pb-5"
-              modules={[Autoplay, Pagination]} // ✅ هنا ضيف الموديولز
+              modules={[Autoplay, Pagination]} 
               pagination={{ dynamicBullets: true }}
               autoplay={{ delay: 2000, disableOnInteraction: false }}
             >
