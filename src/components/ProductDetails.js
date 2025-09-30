@@ -88,7 +88,7 @@ function ProductDetails() {
             </div>
             <hr />
             <div className="row px-3">
-              <BtnAddToCart />
+              <BtnAddToCart product={product}/>
             </div>
           </div>
         </div>

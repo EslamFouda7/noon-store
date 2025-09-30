@@ -35,7 +35,7 @@ function Card({ products }) {
                 </div>
               </Link>
               <div className="card-footer bg-white border-0 d-flex justify-content-end ">
-                <BtnAddToCart />
+                <BtnAddToCart product={product}/>
               </div>
             </div>
           </div>
