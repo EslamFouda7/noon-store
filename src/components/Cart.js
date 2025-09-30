@@ -24,7 +24,7 @@ function Cart() {
           <div className="row d-flex justify-content-between">
             <div className="col-lg-8">
               {cart.map((product) => (
-                <div className="row bg-white border border-info-subtle rounded p-3 mb-4">
+                <div className="row bg-white border border-info-subtle rounded p-3 mb-4" key={product.id}>
                   <div className="col-md-3">
                     <img
                       src={product.images[0]}
@@ -50,7 +50,7 @@ function Cart() {
                     <div className="d-flex gap-2 mb-3">
                       <p className="fw-bold text-secondary d-flex">Qty</p>
                       <select
-                        class="form-select"
+                        className="form-select"
                         name="quantity"
                         value={product.quantity}
                         onChange={(e) =>

@@ -6,3 +6,10 @@
   width: 150px; 
   height: 170px;
 }
+
+.pagination .active .page-link{
+  background-color: #FFD500 !important;
+  border-color: #FFD500 !important;
+  box-shadow: 0 0 10px #FFD814 !important;
+
+}

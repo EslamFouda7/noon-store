@@ -4,10 +4,10 @@ const baseUrl = "https://dummyjson.com/products";
 //get all products
 export const fetchProducts = createAsyncThunk(
   "ProductsSlice/products",
-  async () => {
-    const res = await fetch(`${baseUrl}?limit=0`);
+   async ({ limit, skip }) => {
+    const res = await fetch(`${baseUrl}?limit=${limit}&skip=${skip}`);
     const data = await res.json();
-    return data.products;
+    return data; // بيرجع { products, total, skip, limit }
   }
 );
 
@@ -42,13 +42,16 @@ export const productById = createAsyncThunk(
 );
 
 const ProductsSlice = createSlice({
+  name: "ProductsSlice",
   initialState: {
     items: [],
     loading: false,
     category: null,
     product: null,
+    total: 0,
+    limit: 10,
+    skip: 0,
   },
-  name: "ProductsSlice",
   reducers: {
     clearSearch: (state) => {
       state.isSearching = false;
@@ -62,7 +65,10 @@ const ProductsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.items = action.payload.products;
+        state.total = action.payload.total;
+        state.limit = action.payload.limit;
+        state.skip = action.payload.skip;
         state.isSearching = false;
       })
       .addCase(fetchProductsByCategory.pending, (state) => {

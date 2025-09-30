@@ -90,7 +90,7 @@ function ProductDetails() {
           </div>
           <div className="col-lg-3 pb-5">
             <hr />
-            <div class="row mt-4 text-muted">
+            <div className="row mt-4 text-muted">
               <p>
                 <FaAward /> {product.warrantyInformation}
               </p>
@@ -100,7 +100,7 @@ function ProductDetails() {
               <p>
                 <FaClockRotateLeft /> {product.returnPolicy}
               </p>
-              <p class="fw-bold text-success">{product.availabilityStatus}</p>
+              <p className="fw-bold text-success">{product.availabilityStatus}</p>
               <p>weight: {product.weight}</p>
               <p>stock quantity: {product.stock}</p>
             </div>

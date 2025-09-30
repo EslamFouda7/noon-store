@@ -23,13 +23,13 @@ function Navbar() {
 };
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-custom-yellow">
-        <div class="container">
+      <nav className="navbar navbar-expand-lg bg-custom-yellow">
+        <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="" className="w-50"></img>
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -37,10 +37,10 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse fw-bold"
+            className="collapse navbar-collapse fw-bold"
             id="navbarSupportedContent"
           >
             <form className="d-flex flex-grow-1" role="search" onSubmit={handleSearch}>
@@ -54,8 +54,8 @@ function Navbar() {
                 onChange={(e) => setQuery(e.target.value)}
               />
             </form>
-            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-              <li class="nav-item">
+            <ul className="navbar-nav mb-2 mb-lg-0 ms-auto">
+              <li className="nav-item">
                 <Link
                   className="nav-link active text-secondary"
                   aria-current="page"
@@ -64,7 +64,7 @@ function Navbar() {
                   Products
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   className="nav-link position-relative text-secondary"
                   to="/cart"
