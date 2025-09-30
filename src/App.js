@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
@@ -11,6 +10,7 @@ import Loading from "./components/Loading";
 import Footer from "./components/Footer";
 import SearchRes from "./components/SearchRes";
 import NotFound from "./components/NotFound";
+
 
 function App() {
   const { loading } = useSelector((state) => state.products);
